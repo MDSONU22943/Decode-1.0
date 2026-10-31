@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap');
+
+:root {
+  --navy: #203653;
+  --navy-2: #334e70;
+  --ink: #24344a;
+  --muted: #718096;
+  --line: #dce3e8;
+  --paper: #f6f8fa;
+  --cream: #f2eadb;
+  --gold: #a58a55;
+  --mint: #e5efec;
+  --white: #fff;
+  --shadow: 0 8px 24px rgba(31, 51, 75, .07);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: #eef2f5; color: var(--ink);
+  font-family: 'DM Sans', sans-serif; padding: 28px 16px 48px;
+}
+button, input, textarea { font: inherit; }
+.app-shell { max-width: 1080px; margin: 0 auto; }
+.hero {
+  background: var(--navy); color: white; text-align: center; padding: 28px 22px 25px;
+  border-radius: 18px; box-shadow: var(--shadow); border: 5px solid #d7dfe5;
+}
+.hero-kicker { color: #e5d6b6; font: 800 13px 'Manrope', sans-serif; letter-spacing: 3px; }
+.hero h1 { margin: 7px 0 8px; font: 800 clamp(23px, 4vw, 36px) 'Manrope', sans-serif; letter-spacing: .4px; }
+.hero p { margin: 0; color: #d7e0e9; font-size: 14px; }
+.panel { background: var(--white); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); }
+.profile {
+  margin-top: 18px; padding: 20px; display: grid;
+  grid-template-columns: 1fr 1fr; gap: 18px 24px;
+}
+.field, .note-field { display: flex; flex-direction: column; gap: 7px; }
+.field span, .note-field span { color: var(--gold); font-size: 12px; font-weight: 800; letter-spacing: .45px; }
+input[type="text"], input[type="date"], textarea {
+  width: 100%; border: 1px solid #d8e0e6; border-radius: 9px; padding: 11px 12px;
+  color: var(--ink); background: #fbfcfd; outline: none; transition: border .2s, box-shadow .2s;
+}
+input:focus, textarea:focus { border-color: #8198b1; box-shadow: 0 0 0 3px rgba(80, 112, 148, .12); }
+.progress-wrap { grid-column: 1 / -1; padding-top: 3px; }
+.progress-heading { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+.progress-heading strong { color: var(--navy-2); }
+.progress-track { height: 10px; background: #e9eef2; border-radius: 20px; overflow: hidden; }
+.progress-bar { width: 0; height: 100%; background: #557b70; border-radius: inherit; transition: width .25s; }
+.progress-wrap small { display: block; margin-top: 7px; color: var(--muted); font-size: 11px; }
+.toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 28px 2px 14px; }
+.toolbar h2, .review h2 { margin: 0; font: 800 20px 'Manrope', sans-serif; color: var(--navy); }
+.toolbar p { margin: 5px 0 0; color: var(--muted); font-size: 12px; }
+.toolbar-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn { border: 1px solid #cbd5df; border-radius: 8px; padding: 9px 12px; cursor: pointer; font-size: 12px; font-weight: 700; }
+.btn-outline { background: white; color: var(--navy); }
+.btn:hover { background: #f1f5f8; }
+.file-btn { display: inline-flex; align-items: center; }
+.lecture-list { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+.lecture-card { background: white; border: 1px solid #d8e0e5; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 14px rgba(31,51,75,.045); }
+.lecture-top { display: flex; align-items: flex-start; gap: 12px; padding: 14px 15px 12px; background: #f2f0ea; min-height: 64px; }
+.lecture-number { flex: 0 0 auto; background: var(--navy); color: white; border-radius: 7px; padding: 7px 10px; font-size: 11px; font-weight: 800; letter-spacing: .3px; }
+.topic { flex: 1; min-width: 0; border: 0; background: transparent; resize: none; padding: 3px 0; color: var(--navy); font: 800 12px 'Manrope', sans-serif; text-transform: uppercase; outline: none; min-height: 30px; }
+.topic:focus { box-shadow: inset 0 -1px #9babc0; }
+.card-body { display: grid; grid-template-columns: 1fr 1.6fr 1fr; gap: 12px; padding: 13px 15px 15px; }
+.group-title { border-radius: 7px; padding: 7px 9px; font: 800 10px 'Manrope', sans-serif; letter-spacing: .5px; margin-bottom: 10px; }
+.lecture-group .group-title { background: #506987; color: white; }
+.revision-group .group-title { background: #eadfc8; color: var(--navy); }
+.synopsis-group .group-title { background: #e3eeeb; color: var(--navy); }
+.check-row { display: flex; align-items: center; gap: 7px; min-height: 25px; color: #43536a; font-size: 11px; font-weight: 600; }
+.check-row input { width: 16px; height: 16px; accent-color: #3f6f60; cursor: pointer; }
+.revision-checks { display: flex; justify-content: space-between; gap: 5px; }
+.score-group { grid-column: 1 / -1; display: flex; align-items: center; gap: 10px; border-top: 1px solid #edf0f2; padding-top: 10px; }
+.score-label { color: var(--gold); font-size: 10px; font-weight: 800; letter-spacing: .5px; }
+.score-input { width: 66px !important; padding: 7px 8px !important; text-align: center; }
+.score-separator { color: var(--muted); font-size: 12px; }
+.review { margin-top: 22px; padding: 22px; background: #f7fafb; }
+.review-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+.eyebrow { display: block; color: var(--gold); font-size: 10px; font-weight: 800; letter-spacing: 1.4px; margin-bottom: 5px; }
+.review-note { color: var(--muted); font-size: 11px; }
+.review .note-field { margin-top: 15px; }
+textarea { resize: vertical; min-height: 72px; line-height: 1.5; font-size: 13px; }
+.footer { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 2px; color: #8995a2; font-size: 10px; font-weight: 700; letter-spacing: .4px; }
+.text-btn { border: 0; background: transparent; color: #9b5c54; font-size: 11px; font-weight: 700; cursor: pointer; }
+.text-btn:hover { text-decoration: underline; }
+@media (max-width: 760px) {
+  body { padding: 14px 10px 28px; }
+  .hero { padding: 23px 14px; }
+  .profile { padding: 15px; gap: 14px; }
+  .lecture-list { grid-template-columns: 1fr; }
+  .toolbar { align-items: flex-start; flex-direction: column; }
+}
+@media (max-width: 430px) {
+  .profile { grid-template-columns: 1fr; }
+  .progress-wrap { grid-column: auto; }
+  .card-body { grid-template-columns: 1fr 1.35fr 1fr; gap: 8px; padding: 11px; }
+  .group-title { font-size: 9px; padding: 7px 6px; }
+  .check-row { font-size: 10px; gap: 4px; }
+  .check-row input { width: 15px; height: 15px; }
+  .lecture-top { padding: 12px; }
+  .topic { font-size: 11px; }
+  .footer { flex-wrap: wrap; }
+}

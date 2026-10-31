@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#203653">
+  <title>Polity Revision Tracker | Decode 1.0 GS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div class="hero-kicker">DECODE 1.0 GS</div>
+      <h1>POLITY REVISION TRACKER</h1>
+      <p>Plan your lectures, track three revisions, and prepare for the final mock.</p>
+    </header>
+
+    <section class="profile panel">
+      <label class="field">
+        <span>Your name</span>
+        <input id="studentName" type="text" placeholder="Enter your name" autocomplete="name">
+      </label>
+      <label class="field">
+        <span>Target date</span>
+        <input id="targetDate" type="date">
+      </label>
+      <div class="progress-wrap">
+        <div class="progress-heading">
+          <span>Overall progress</span>
+          <strong id="progressText">0% complete</strong>
+        </div>
+        <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+        <small id="progressDetail">0 of 75 activities completed</small>
+      </div>
+    </section>
+
+    <section class="toolbar">
+      <div>
+        <h2>Lecture checklist</h2>
+        <p>Tick an activity when it is complete. Your changes save automatically.</p>
+      </div>
+      <div class="toolbar-actions">
+        <button class="btn btn-outline" id="exportBtn" type="button">Export backup</button>
+        <label class="btn btn-outline file-btn" for="importFile">Import backup</label>
+        <input id="importFile" type="file" accept="application/json,.json" hidden>
+      </div>
+    </section>
+
+    <section id="lectureList" class="lecture-list" aria-label="Polity lecture tracker"></section>
+
+    <section class="review panel">
+      <div class="review-heading">
+        <div>
+          <span class="eyebrow">WRAP-UP</span>
+          <h2>Final revision review</h2>
+        </div>
+        <span class="review-note">Editable notes</span>
+      </div>
+      <label class="note-field">
+        <span>Topics I need to revisit</span>
+        <textarea id="revisit" rows="3" placeholder="Write topics you want to revise again..."></textarea>
+      </label>
+      <label class="note-field">
+        <span>Articles or facts I keep confusing</span>
+        <textarea id="confusing" rows="3" placeholder="Note confusing articles, facts, or concepts..."></textarea>
+      </label>
+      <label class="note-field">
+        <span>My plan before the final mock</span>
+        <textarea id="mockPlan" rows="3" placeholder="Write your final preparation plan..."></textarea>
+      </label>
+    </section>
+
+    <footer class="footer">
+      <span>DECODE 1.0 GS · POLITY</span>
+      <span id="saveStatus" role="status" aria-live="polite">All changes saved in this browser</span>
+      <button class="text-btn" id="resetBtn" type="button">Reset tracker</button>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
